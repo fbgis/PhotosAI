@@ -40,34 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		        g.append("g")
 		         .attr("transform", "translate(0," + height + ")")
-		         .call(d3.axisBottom(xScale))
-		         .append("text")
-		         .attr("y", height - 250)
-		         .attr("x", width - 100)
-		         .attr("text-anchor", "end")
-		         .attr("stroke", "black")
+		         .call(d3.axisBottom(xScale));
 
 		        g.append("g")
 		         .call(d3.axisLeft(yScale).tickFormat(function(d){
 		             return "$" + d;
-		         })
-		         .ticks(10))
-		         .append("text")
-		         .attr("transform", "rotate(-90)")
-		         .attr("y", 6)
-		         .attr("dy", "-5.1em")
-		         .attr("text-anchor", "end")
-		         .attr("stroke", "black")
+		         }).ticks(10));
 
 		        g.selectAll(".bar")
 		         .data(data)
 		         .enter().append("rect")
-		         .attr("fill", "steelblue")
 		         .attr("class", "bar")
 		         .attr("x", function(d) { return xScale(d.year); })
 		         .attr("y", function(d) { return yScale(d.value); })
 		         .attr("width", xScale.bandwidth())
 		         .attr("height", function(d) { return height - yScale(d.value); });
+		         .attr("fill", "steelblue")
 		    });			
 		};	
 	}); 
