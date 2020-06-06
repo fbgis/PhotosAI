@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .data(data)
 		         .enter().append("rect")
 		         .attr("class", "bar")
-		         .attr("x", function(d) { return xScale(d.year); })
+		         .attr("x", function(d) { return xScale(d.column); })
 		         .attr("y", function(d) { return yScale(d.value); })
 		         .attr("width", xScale.bandwidth())
 		         .attr("height", function(d) { return height - yScale(d.value); })
