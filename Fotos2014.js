@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	document.querySelector('.dropdown-item').onclick = function() {
+	document.querySelector('#dropdown-item').onclick = function() {
 		
 	    var svg = d3.select("svg"),
 	        margin = 200,
