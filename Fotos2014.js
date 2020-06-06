@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    var g = svg.append("g")
 	               .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-	    var file = '/Dades/' + '.csv'          
+	    var file = '/Dades/' + 'Dades.csv'          
 
 	    d3.csv(fiel, function(error, data) {
 	        if (error) {
@@ -62,5 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	         .attr("width", xScale.bandwidth())
 	         .attr("height", function(d) { return height - yScale(d.value); });
 	    });
-	});    
+	};    
 });    
