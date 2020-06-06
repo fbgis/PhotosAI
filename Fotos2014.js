@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		alert("hola2");
 	}; 
 
-	document.querySelector('.opcio').onclick = function() {
-		alert("hola3");
-	}; 
+	document.querySelectorAll('.opcio').forEach(function(button) {
+		button.onclick = function() {
+			alert("hola3");
+			alert(button.id);
+		};	
+	}); 
 
 	document.querySelector('.dropdown-item').onchange = function() {
 		alert("hola5");
