@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		               .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
 		              
-		    var file = '/Dades/' + chartName + '.csv'; 
+		    var file = 'Dades/' + chartName + '.csv'; 
 
 		    alert(file);
 
