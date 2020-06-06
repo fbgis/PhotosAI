@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.dropdown-item').onclick = function() {
 		alert("hola4");
 	}; 
-	document.querySelector('#dropdown-item').onclick = function() {
-		alert("hola5");
-	}; 
-	document.querySelector('#btn').onclick = function() {
+
+	document.querySelector('.btn').onclick = function() {
 		alert("hola6");
 	}; 
 	document.querySelector('#btn').onclick = function() {
