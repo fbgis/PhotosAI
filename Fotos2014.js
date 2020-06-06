@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		        width = svg.attr("width") - margin,
 		        height = svg.attr("height") - margin
 
-		    svg.empty();    
+		    var parentElement = svg.parentElement
+		    var emptySvg = svg.cloneNode(false);
+		    parentElement.removeChild(svg);
+		    parentElement.appendChild(emptySvg);    
 
 		    svg.append("text")
 		       .attr("transform", "translate(100,0)")
