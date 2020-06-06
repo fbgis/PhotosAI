@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		        g.selectAll(".bar")
 		         .data(data)
 		         .enter().append("rect")
-		         .attr("fill", "steelblue");
+		         .attr("fill", "steelblue")
 		         .attr("class", "bar")
 		         .attr("x", function(d) { return xScale(d.year); })
 		         .attr("y", function(d) { return yScale(d.value); })
