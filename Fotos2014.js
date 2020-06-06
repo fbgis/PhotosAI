@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		alert("hola4");
 	}; 
 
+	document.querySelector('.item').onclick = function() {
+		alert("hola4");
+	}; 
+
+	document.querySelector('.dropdown-item').onchange = function() {
+		alert("hola5");
+	}; 
+
 	document.querySelector('.btn').onclick = function() {
 		alert("hola6");
 	}; 
