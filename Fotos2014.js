@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		       .attr("y", 50)
 		       .attr("font-size", "24px")
 		       .text("Histogram: "+chartName)
+		       .attr("fill", "steelblue")
 
 		    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
 		        yScale = d3.scaleLinear().range([height, 0]);
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		        g.append("g")
 		         .call(d3.axisLeft(yScale).tickFormat(function(d){
-		             return "$" + d;
+		             return d;
 		         }).ticks(10));
 
 		        g.selectAll(".bar")

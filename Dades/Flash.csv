@@ -1,0 +1,5 @@
+column,value
+"Flash did not fire, compulsory flash mode",1110
+Flash did not fire,283
+"Flash fired, compulsory flash mode, return light not detected",98
+"Flash did not fire, auto mode",54
