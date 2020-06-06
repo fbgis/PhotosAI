@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.btn').onclick = function() {
 		alert("hola6");
 	}; 
-	document.querySelector('#btn').onclick = function() {
-		alert("hola7");
-	}; 
+
 
 });    
