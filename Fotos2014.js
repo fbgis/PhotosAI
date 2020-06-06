@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	document.querySelector('.dropdown-item').onclick = function() {
-		alert("hola4");
+		alert("hola2");
 	}; 
 
-	document.querySelector('.item').onclick = function() {
-		alert("hola4");
+	document.querySelector('.opcio').onclick = function() {
+		alert("hola3");
 	}; 
 
 	document.querySelector('.dropdown-item').onchange = function() {
