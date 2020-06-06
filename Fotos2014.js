@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		        width = svg.attr("width") - margin,
 		        height = svg.attr("height") - margin
 
+		    svg.empty();    
+
 		    svg.append("text")
 		       .attr("transform", "translate(100,0)")
-		       .attr("x", 50)
+		       .attr("x", 0)
 		       .attr("y", 50)
 		       .attr("font-size", "24px")
-		       .text(chartName)
+		       .text("Histogram: "+chartName)
 
 		    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
 		        yScale = d3.scaleLinear().range([height, 0]);
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		            throw error;
 		        }
 
-		        xScale.domain(data.map(function(d) { return d.year; }));
+		        xScale.domain(data.map(function(d) { return d.column; }));
 		        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 
 		        g.append("g")
@@ -44,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .attr("x", width - 100)
 		         .attr("text-anchor", "end")
 		         .attr("stroke", "black")
-		         .text("Year");
 
 		        g.append("g")
 		         .call(d3.axisLeft(yScale).tickFormat(function(d){
@@ -57,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .attr("dy", "-5.1em")
 		         .attr("text-anchor", "end")
 		         .attr("stroke", "black")
-		         .text("Stock Price");
 
 		        g.selectAll(".bar")
 		         .data(data)
 		         .enter().append("rect")
+		         .attr("fill", "steelblue");
 		         .attr("class", "bar")
 		         .attr("x", function(d) { return xScale(d.year); })
 		         .attr("y", function(d) { return yScale(d.value); })
