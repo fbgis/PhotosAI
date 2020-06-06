@@ -16,7 +16,7 @@
     var g = svg.append("g")
                .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-    d3.csv("XYZ.csv", function(error, data) {
+    d3.csv("Dades.csv", function(error, data) {
         if (error) {
             throw error;
         }
