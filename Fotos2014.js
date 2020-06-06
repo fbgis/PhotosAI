@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .attr("x", function(d) { return xScale(d.year); })
 		         .attr("y", function(d) { return yScale(d.value); })
 		         .attr("width", xScale.bandwidth())
-		         .attr("height", function(d) { return height - yScale(d.value); });
-		         .attr("fill", "steelblue")
+		         .attr("height", function(d) { return height - yScale(d.value); })
+		         .attr("fill", "steelblue");
 		    });			
 		};	
 	}); 
