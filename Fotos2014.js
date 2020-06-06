@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.opcio').forEach(function(button) {
 		button.onclick = function() {
 
+			var chartName=button.id 
+
 		    var svg = d3.select("svg"),
 		        margin = 200,
 		        width = svg.attr("width") - margin,
@@ -13,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		       .attr("x", 50)
 		       .attr("y", 50)
 		       .attr("font-size", "24px")
-		       .text("XYZ Foods Stock Price")
+		       .text(chartName)
 
 		    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
 		        yScale = d3.scaleLinear().range([height, 0]);
@@ -21,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		    var g = svg.append("g")
 		               .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-		    var file = '/Dades/' + button.id + '.csv'; 
+		              
+		    var file = '/Dades/' + chartName + '.csv'; 
 
 		    alert(file);
 
