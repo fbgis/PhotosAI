@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	document.querySelector('.dropdown-item').onclick = function() {
+	document.querySelector('a').onclick = function() {
 		
-
+		alert("hola");
 
 	    var svg = d3.select("svg"),
 	        margin = 200,
@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	    var g = svg.append("g")
 	               .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-	    var file = '/Dades/' + 'Dades.csv' 
+	    var file = '/Dades/' + 'Dades.csv'; 
 
-	    alert(file)
+	    alert(file);
 
 	    d3.csv(file, function(error, data) {
 	        if (error) {
