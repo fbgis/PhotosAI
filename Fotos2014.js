@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('a').onclick = function() {
 		alert("hola1");
 	};    
-	document.querySelector('.a').onclick = function() {
-		alert("hola2");
-	}; 
+
 	document.querySelector('#a').onclick = function() {
 		alert("hola3");
 	}; 
