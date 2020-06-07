@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 				//mouseover event handler function
-				function onMouseOver(d, i) {
+				function onMouseOver(e, i) {
 				    d3.select(this).attr('class', 'highlight');
 				    d3.select(this)
 				      .transition()     // adds animation
 				      .duration(200)
 				      .attr('width', xScale.bandwidth() + 5)
-				      .attr("y", function(d) { return yScale(d.value) - 10; })
-				      .attr("height", function(d) { return height - yScale(d.value) + 10; });
+				      .attr("y", function(e) { return yScale(d.value) - 10; })
+				      .attr("height", function(e) { return height - yScale(d.value) + 10; });
 
 				    // g.append("text")
 				    //  .attr('class', 'val') 
@@ -91,15 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 
 				//mouseout event handler function
-				function onMouseOut(d, i) {
+				function onMouseOut(e, i) {
 				    // use the text label class to remove label on mouseout
 				    d3.select(this).attr('class', 'bar');
 				    d3.select(this)
 				      .transition()     // adds animation
 				      .duration(200)
 				      .attr('width', xScale.bandwidth())
-				      .attr("y", function(d) { return yScale(d.value); })
-				      .attr("height", function(d) { return height - yScale(d.value); });
+				      .attr("y", function(e) { return yScale(d.value); })
+				      .attr("height", function(e) { return height - yScale(d.value); });
 
 				    // d3.selectAll('.val')
 				    //   .remove()
