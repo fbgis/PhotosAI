@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	    g.append("text")
 	     .attr('class', 'val') 
 	     .attr('x', function() {
-	         return x(d.column);
+	         return xScale(d.column);
 	     })
 	     .attr('y', function() {
-	         return y(d.value) - 15;
+	         return yScale(d.value) - 15;
 	     })
 	     .text(function() {
-	         return [ '$' +d.value];  // Value of the text
+	         return [d.value];  // Value of the text
 	     });
 	}
 
