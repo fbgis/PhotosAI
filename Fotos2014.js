@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		         })
 		         .attr("height", function(d) { return height - yScale(d.value); });
 
-				g.selectAll(".bar")
-					.append("text")
-			       .attr("x", function(d) { return (d*10); })
-			       .attr("y", yScale / 2)
-			       .attr("dy", ".35em")
-			       .text(function(d) { return d; });
+				// g.selectAll(".bar")
+				// 	.append("text")
+			 //       .attr("x", function(d) { return (d*10); })
+			 //       .attr("y", yScale / 2)
+			 //       .attr("dy", ".35em")
+			 //       .text(function(d) { return d; });
 
 
 
@@ -86,17 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			      .attr("y", function(d) { return yScale(d.value) - 10; })
 			      .attr("height", function(d) { return height - yScale(d.value) + 10; });
 
-			    // g.append("text")
-			    //  .attr('class', 'val') 
-			    //  .attr('x', function() {
-			    //      return xScale(d.column);
-			    //  })
-			    //  .attr('y', function() {
-			    //      return yScale(d.value) - 15;
-			    //  })
-			    //  .text(function() {
-			    //      return [d.value];  // Value of the text
-			    //  });
+			    g.append("text")
+			     .attr('class', 'val') 
+			     .attr('x', function() {
+			         return xScale(d.column);
+			     })
+			     .attr('y', function() {
+			         return yScale(d.value) - 15;
+			     })
+			     .text(function() {
+			         return [d.value];  // Value of the text
+			     });
 			}
 
 			//mouseout event handler function
