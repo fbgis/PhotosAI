@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		        height = svg.attr("height") - margin;
 
 			var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-				yScale = d3.scaleLinear().range([height, 0]);	
+				yScale = d3.scaleLinear().range([0, height]);	
 
 		    svg.text("")   
 
@@ -62,19 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		             return i * 50;
 		         })
 		         .attr("height", d => yScale(0) - yScale(d.value));
-
-				svg.selectAll("text.bar")
-				  .data(data)
-					.enter().append("text")
-				  .attr("class", "bar")
-				  .attr("text-anchor", "middle")
-				  .attr("x", function(d) { return xScale(d.letter); })
-				  .attr("y", function(d) { return yScale(d.frequency) - 10; })
-				  .text(function(d) { return d.frequency; });
-
-
-
-
 
 		    });		
 
