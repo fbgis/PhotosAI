@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		    svg.text("")   
 
 		    
-
-		    
-
 		              
 		    var file = 'Dades/' + chartName + '.csv'; 
 
@@ -59,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				 .on("mouseout", onMouseOut)
 		         .attr("x", function(d) { return xScale(d.column); })
 		         .attr("y", function(d) { return yScale(d.value); })
-		         .attr("width", xScale.bandwidth())
-		         .attr("height", function(d) { return height - yScale(d.value); });
+		         .attr("width", xScale.bandwidth());
+		         // .attr("height", function(d) { return height - yScale(d.value); });
 
 				g.selectAll(".bar")
 					.append("text")
