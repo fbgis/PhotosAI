@@ -12,19 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		        width = svg.attr("width") - margin,
 		        height = svg.attr("height") - margin
 
-		    svg.text("")    
-		    // var parentElement = svg.parentElement
-		    // var emptySvg = svg.cloneNode(false);
-		    // parentElement.removeChild(svg);
-		    // parentElement.appendChild(emptySvg);    
-
-		    // svg.append("text")
-		    //    .attr("transform", "translate(0,0)")
-		    //    .attr("x", 0)
-		    //    .attr("y", 50)
-		    //    .attr("font-size", "24px")
-		    //    .text("Histogram: "+chartName)
-		    //    .attr("fill", "steelblue")
+		    svg.text("")   
 
 		    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
 		        yScale = d3.scaleLinear().range([height, 0]);
