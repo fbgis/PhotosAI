@@ -74,7 +74,7 @@ function onMouseOver(d, i) {
     d3.select(this)
       .transition()     // adds animation
       .duration(400)
-      .attr('width', x.bandwidth() + 5)
+      .attr('width', xScale.bandwidth() + 5)
       .attr("y", function(d) { return y(d.value) - 10; })
       .attr("height", function(d) { return height - y(d.value) + 10; });
 
@@ -98,7 +98,7 @@ function onMouseOut(d, i) {
     d3.select(this)
       .transition()     // adds animation
       .duration(400)
-      .attr('width', x.bandwidth())
+      .attr('width', xScale.bandwidth())
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); });
 
