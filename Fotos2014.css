@@ -2,8 +2,8 @@ svg rect {
         fill: orange;
     }
 
-svg text {
-        fill: white;
+svg rect.text {
+        fill: black;
         font: 10px sans-serif;
         text-anchor: end;
     }    
