@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		        height = svg.attr("height") - margin
 
 	var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-		yScale = d3.scaleLinear().range([height, 0]);		        
+		yScale = d3.scaleLinear().range([height, 0]);	
+
+	var g = svg.append("g")
+		               .attr("transform", "translate(" + 100 + "," + 100 + ")");			        
 
 	document.querySelectorAll('.opcio').forEach(function(button) {
 		button.onclick = function() {
@@ -21,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		    
 
-		    var g = svg.append("g")
-		               .attr("transform", "translate(" + 100 + "," + 100 + ")");
+		    
 
 		              
 		    var file = 'Dades/' + chartName + '.csv'; 
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    d3.select(this).attr('class', 'highlight');
 	    d3.select(this)
 	      .transition()     // adds animation
-	      .duration(400)
+	      .duration(200)
 	      .attr('width', xScale.bandwidth() + 5)
 	      .attr("y", function(d) { return yScale(d.value) - 10; })
 	      .attr("height", function(d) { return height - yScale(d.value) + 10; });
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    g.append("text")
 	     .attr('class', 'val') 
 	     .attr('x', function() {
-	         return x(d.year);
+	         return x(d.column);
 	     })
 	     .attr('y', function() {
 	         return y(d.value) - 15;
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    d3.select(this).attr('class', 'bar');
 	    d3.select(this)
 	      .transition()     // adds animation
-	      .duration(400)
+	      .duration(200)
 	      .attr('width', xScale.bandwidth())
 	      .attr("y", function(d) { return yScale(d.value); })
 	      .attr("height", function(d) { return height - yScale(d.value); });
