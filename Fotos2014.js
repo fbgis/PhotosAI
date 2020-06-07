@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		         })
 		         .attr("height", function(d) { return height - yScale(d.value); });
 
-				// g.selectAll(".bar")
-				// 	.append("text")
-			 //       .attr("x", function(d) { return (d*10); })
-			 //       .attr("y", yScale / 2)
-			 //       .attr("dy", ".35em")
-			 //       .text(function(d) { return d; });
+				g.selectAll(".bar")
+					.append("text")
+			       .attr("x", function(d) { return (d*10); })
+			       .attr("y", yScale / 2)
+			       .attr("dy", ".35em")
+			       .text(function(d) { return d; });
 
 
 
