@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		        alert(data);
 		        xScale.domain(data.map(function(d) { return d.column; }));
-		        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
+		        yScale.domain([0, d3.max(data, function(d) { return +d.value; })]);
 		        alert(yScale.domain);
 
 		        g.append("g")
