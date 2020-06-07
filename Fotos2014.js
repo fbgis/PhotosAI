@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				 .on("mouseout", onMouseOut)
 		         .attr("x", function(d) { return xScale(d.column); })
 		         .attr("y", function(d) { return yScale(d.value); })
-		         .attr("width", xScale.bandwidth())
+		         .attr("width", x.bandwidth())
 		         .transition()
 		         .ease(d3.easeLinear)
 		         .duration(200)
