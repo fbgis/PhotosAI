@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			     .attr('y', function() {
 			         return yScale(d.value) - 15;
 			     })
-			     .attr("dx", "-.8em")
+			     .attr("dx", ".8em")
 			     .text(function() {
 			         return [d.value];  // Value of the text
 			     });
