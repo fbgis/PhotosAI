@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		        height = svg.attr("height") - margin
 
 	var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-		        yScale = d3.scaleLinear().range([height, 0]);		        
+		yScale = d3.scaleLinear().range([height, 0]);		        
 
 	document.querySelectorAll('.opcio').forEach(function(button) {
 		button.onclick = function() {
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	      .transition()     // adds animation
 	      .duration(400)
 	      .attr('width', xScale.bandwidth() + 5)
-	      .attr("y", function(d) { return y(d.value) - 10; })
-	      .attr("height", function(d) { return height - y(d.value) + 10; });
+	      .attr("y", function(d) { return yScale(d.value) - 10; })
+	      .attr("height", function(d) { return height - yScale(d.value) + 10; });
 
 	    g.append("text")
 	     .attr('class', 'val') 
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	      .transition()     // adds animation
 	      .duration(400)
 	      .attr('width', xScale.bandwidth())
-	      .attr("y", function(d) { return y(d.value); })
-	      .attr("height", function(d) { return height - y(d.value); });
+	      .attr("y", function(d) { return yScale(d.value); })
+	      .attr("height", function(d) { return height - yScale(d.value); });
 
 	    d3.selectAll('.val')
 	      .remove()
