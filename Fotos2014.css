@@ -4,10 +4,12 @@ svg rect {
 
 .bar {
     fill: steelblue;
+    opacity: 0.5;
 }
 
 .highlight {
     fill: orange;
+    opacity: 0.5;
 }    
 
 svg rect.text {
