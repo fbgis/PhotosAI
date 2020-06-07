@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		            throw error;
 		        }
 
+		        alert(data);
 		        xScale.domain(data.map(function(d) { return d.column; }));
 		        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 		        alert(d3.max(data, function(d) { return d.value; }));
