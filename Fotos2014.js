@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .call(d3.axisBottom(xScale))
 		         .selectAll("text")  
             		.style("text-anchor", "end")
-            		.attr("dx", "-.0em")
-            		.attr("dy", ".15em")
+            		.attr("dx", "-.8em")
+            		.attr("dy", ".10em")
             		.attr("transform", "rotate(-90)" );
 
 		        g.append("g")
