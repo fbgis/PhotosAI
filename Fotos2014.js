@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		        height = svg.attr("height") - margin;
 
 			var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-				yScale = d3.scaleLinear().range([0, height]);	
+				yScale = d3.scaleLinear().range([height, 0]);	
 
 		    svg.text("")   
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .delay(function (d, i) {
 		             return i * 50;
 		         })
-		         .attr("height", d => yScale(0) - yScale(d.value));
+		         .attr("height", function (d) { return height - yScale(d.value); });
 
 		    });		
 
