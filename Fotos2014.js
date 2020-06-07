@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	      .attr("y", function(d) { return yScale(d.value) - 10; })
 	      .attr("height", function(d) { return height - yScale(d.value) + 10; });
 
-	    g.append("text")
+	    this.append("text")
 	     .attr('class', 'val') 
 	     .attr('x', function() {
 	         return xScale(d.column);
