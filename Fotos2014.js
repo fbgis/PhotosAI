@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .attr("width", xScale.bandwidth())
 		         .attr("height", function(d) { return height - yScale(d.value); })
 		         .attr("fill", "steelblue");
+
+				g.selectAll(".bar")
+					.append("text")
+			       .attr("x", function(d) { return (d*10); })
+			       .attr("y", yScale / 2)
+			       .attr("dy", ".35em")
+			       .text(function(d) { return d; });
+
 		    });			
 		};	
 	}); 
