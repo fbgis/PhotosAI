@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .selectAll("text")  
             		.style("text-anchor", "end")
             		.attr("dx", "-.8em")
-            		.attr("dy", "-.1em")
+            		.attr("dy", "-.5em")
             		.attr("transform", "rotate(-90)" );
 
 		        g.append("g")
