@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.querySelector('#ChartTitle').innerHTML = chartName;
 
 		    var svg = d3.select("svg"),
-		        margin = 100,
+		        margin = 200,
 		        width = svg.attr("width") - margin,
 		        height = svg.attr("height") - margin;
 
