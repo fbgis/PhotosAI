@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		        xScale.domain(data.map(function(d) { return d.column; }));
 		        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
+		        alert(yScale.domain)
 
 		        g.append("g")
 		         .attr("transform", "translate(0," + height + ")")
@@ -94,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			     .attr('y', function() {
 			         return yScale(d.value) - 15;
 			     })
-			     .attr("dx", ".8em")
 			     .text(function() {
 			         return [d.value];  // Value of the text
 			     });
