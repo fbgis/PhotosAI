@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			     .attr('y', function() {
 			         return yScale(d.value) - 15;
 			     })
+			     .attr("dx", "-.8em")
 			     .text(function() {
 			         return [d.value];  // Value of the text
 			     });
@@ -110,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			      .attr("y", function(d) { return yScale(d.value); })
 			      .attr("height", function(d) { return height - yScale(d.value); });
 
-			    // d3.selectAll('.val')
-			    //   .remove()
+			    d3.selectAll('.val')
+			      .remove()
 			} 
 
 		};	
