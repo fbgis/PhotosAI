@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	var svg = d3.select("svg"),
+		        margin = 200,
+		        width = svg.attr("width") - margin,
+		        height = svg.attr("height") - margin
+
+	var xScale = d3.scaleBand().range([0, width]).padding(0.4),
+		        yScale = d3.scaleLinear().range([height, 0]);		        
+
 	document.querySelectorAll('.opcio').forEach(function(button) {
 		button.onclick = function() {
 
@@ -7,15 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			document.querySelector('#ChartTitle').innerHTML = chartName;
 
-		    var svg = d3.select("svg"),
-		        margin = 200,
-		        width = svg.attr("width") - margin,
-		        height = svg.attr("height") - margin
+		    
 
 		    svg.text("")   
 
-		    var xScale = d3.scaleBand().range([0, width]).padding(0.4),
-		        yScale = d3.scaleLinear().range([height, 0]);
+		    
 
 		    var g = svg.append("g")
 		               .attr("transform", "translate(" + 100 + "," + 100 + ")");
@@ -66,42 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
 		    });			
 		};	
 	}); 
-});   
 
-//mouseover event handler function
-function onMouseOver(d, i) {
-    d3.select(this).attr('class', 'highlight');
-    d3.select(this)
-      .transition()     // adds animation
-      .duration(400)
-      .attr('width', xScale.bandwidth() + 5)
-      .attr("y", function(d) { return y(d.value) - 10; })
-      .attr("height", function(d) { return height - y(d.value) + 10; });
+	//mouseover event handler function
+	function onMouseOver(d, i) {
+	    d3.select(this).attr('class', 'highlight');
+	    d3.select(this)
+	      .transition()     // adds animation
+	      .duration(400)
+	      .attr('width', xScale.bandwidth() + 5)
+	      .attr("y", function(d) { return y(d.value) - 10; })
+	      .attr("height", function(d) { return height - y(d.value) + 10; });
 
-    g.append("text")
-     .attr('class', 'val') 
-     .attr('x', function() {
-         return x(d.year);
-     })
-     .attr('y', function() {
-         return y(d.value) - 15;
-     })
-     .text(function() {
-         return [ '$' +d.value];  // Value of the text
-     });
-}
+	    g.append("text")
+	     .attr('class', 'val') 
+	     .attr('x', function() {
+	         return x(d.year);
+	     })
+	     .attr('y', function() {
+	         return y(d.value) - 15;
+	     })
+	     .text(function() {
+	         return [ '$' +d.value];  // Value of the text
+	     });
+	}
 
-//mouseout event handler function
-function onMouseOut(d, i) {
-    // use the text label class to remove label on mouseout
-    d3.select(this).attr('class', 'bar');
-    d3.select(this)
-      .transition()     // adds animation
-      .duration(400)
-      .attr('width', xScale.bandwidth())
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); });
+	//mouseout event handler function
+	function onMouseOut(d, i) {
+	    // use the text label class to remove label on mouseout
+	    d3.select(this).attr('class', 'bar');
+	    d3.select(this)
+	      .transition()     // adds animation
+	      .duration(400)
+	      .attr('width', xScale.bandwidth())
+	      .attr("y", function(d) { return y(d.value); })
+	      .attr("height", function(d) { return height - y(d.value); });
 
-    d3.selectAll('.val')
-      .remove()
-} 
+	    d3.selectAll('.val')
+	      .remove()
+	} 
+
+}); 
