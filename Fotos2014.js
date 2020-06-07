@@ -63,12 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		         })
 		         .attr("height", d => yScale(0) - yScale(d.value));
 
-				// g.selectAll(".bar")
-				// 	.append("text")
-			 //       .attr("x", function(d) { return (d*10); })
-			 //       .attr("y", yScale / 2)
-			 //       .attr("dy", ".35em")
-			 //       .text(function(d) { return d; });
+				svg.selectAll("text.bar")
+				  .data(data)
+					.enter().append("text")
+				  .attr("class", "bar")
+				  .attr("text-anchor", "middle")
+				  .attr("x", function(d) { return xScale(d.letter); })
+				  .attr("y", function(d) { return yScale(d.frequency) - 10; })
+				  .text(function(d) { return d.frequency; });
 
 
 
