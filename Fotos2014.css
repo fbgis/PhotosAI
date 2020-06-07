@@ -9,7 +9,6 @@ svg rect {
 
 .highlight {
     fill: orange;
-    opacity: 0.5;
 }    
 
 svg rect.text {
