@@ -2,6 +2,14 @@ svg rect {
         fill: steelblue;
     }
 
+.bar {
+    fill: steelblue;
+}
+
+.highlight {
+    fill: orange;
+}    
+
 svg rect.text {
         fill: black;
         font: 14px sans-serif;
