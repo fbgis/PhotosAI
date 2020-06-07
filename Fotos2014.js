@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		              
 		    var file = 'Dades/' + chartName + '.csv'; 
 
-		    alert(file);
-
 		    d3.csv(file, function(error, data) {
 		        if (error) {
 		            throw error;
@@ -59,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		         .attr("x", function(d) { return xScale(d.column); })
 		         .attr("y", function(d) { return yScale(d.value); })
 		         .attr("width", xScale.bandwidth())
-		         .attr("height", function(d) { return height - yScale(d.value); })
-		         .attr("fill", "steelblue");
+		         .attr("height", function(d) { return height - yScale(d.value); });
 
 				g.selectAll(".bar")
 					.append("text")
