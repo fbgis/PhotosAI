@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		    // parentElement.appendChild(emptySvg);    
 
 		    svg.append("text")
-		       .attr("transform", "translate(100,0)")
+		       .attr("transform", "translate(0,0)")
 		       .attr("x", 0)
 		       .attr("y", 50)
 		       .attr("font-size", "24px")
@@ -43,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		        g.append("g")
 		         .attr("transform", "translate(0," + height + ")")
-		         .call(d3.axisBottom(xScale));
+		         .call(d3.axisBottom(xScale))
+		         .selectAll("text")  
+            		.style("text-anchor", "end")
+            		.attr("dx", "-.8em")
+            		.attr("dy", ".15em")
+            		.attr("transform", "rotate(-90)" );
 
 		        g.append("g")
 		         .call(d3.axisLeft(yScale).tickFormat(function(d){
